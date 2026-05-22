@@ -9,6 +9,35 @@ public class Main07 {
                 new DoubleLinkedListPesanan07();
         int pilih;
         int nomorAntrian = 1;
+
+        // menambahkan 4 data dummy langsung melalui konstruktor
+         antrian.addLast(nomorAntrian++,
+                new Pembeli07(
+                        "Jimin",
+                        "081234567890",
+                        "Malang",
+                        "Laki-laki"));
+
+        antrian.addLast(nomorAntrian++,
+                new Pembeli07(
+                        "Taehyung",
+                        "082233445566",
+                        "Blitar",
+                        "Laki-laki"));
+
+        antrian.addLast(nomorAntrian++,
+                new Pembeli07(
+                        "Jungkook",
+                        "083344556677",
+                        "Kediri",
+                        "Laki-laki"));
+        antrian.addLast(nomorAntrian++,
+                new Pembeli07(
+                        "Suga",
+                        "084455667788",
+                        "Surabaya",
+                        "Laki-laki"));
+
         do {
             System.out.println("=================================");
             System.out.println("SISTEM ANTRIAN ROYAL DELISH");
@@ -27,7 +56,11 @@ public class Main07 {
                     String nama = sc.nextLine();
                     System.out.print("No HP        : ");
                     String hp = sc.nextLine();
-                    Pembeli07 pembeli = new Pembeli07(nama, hp);
+                    System.out.print("Alamat       : "); //input alamat pembeli
+                    String alamat = sc.nextLine();
+                    System.out.print("Jenis Kelamin: "); // Input jenis kelamin pembeli
+                    String jk = sc.nextLine();
+                    Pembeli07 pembeli = new Pembeli07(nama, hp, alamat, jk); // memperbarui objek pembeli menggunakan atribut baru
                     antrian.addLast(nomorAntrian, pembeli);
                     nomorAntrian++;
                     break;

@@ -40,14 +40,22 @@ public class DoubleLinkedListPembeli07 {
             return;
         }
         NodePembeli07 current = head;
+        int jumlahPembeli = 0; // menambahkan variable untuk menghitung jumlah pembeli yang antri (modifikasi)
         System.out.println("=================================");
         System.out.println("Daftar Antrian Pembeli");
         System.out.println("=================================");
-        System.out.printf("%-15s %-15s %-15s\n", "No Antrian", "Nama", "No HP");
+        // mengganti format output, karena ditambahi jenis kelamin sama alamat
+        System.out.printf("%-12s %-15s %-15s %-20s %-15s\n", "No Antrian", "Nama", "No HP", "Alamat", "Jenis Kelamin");
+        // System.out.printf("%-15s %-15s %-15s\n", "No Antrian", "Nama", "No HP");
         while (current != null) {
             System.out.printf("%-15d", current.nomorAntrian);
+            //menampilkan seluaruh data pembeli
             current.pembeli.tampilInformasiPembeli();
+            jumlahPembeli++; //menghitung jumlah antrian
             current = current.next;
         }
+        // untuk menampilkan total pembeli yang sedang antri
+        System.out.println("============================================");
+        System.out.println("Total Pembeli dalam Antrian : " + jumlahPembeli);
     }
 }
